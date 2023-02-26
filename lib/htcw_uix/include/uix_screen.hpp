@@ -156,7 +156,8 @@ namespace uix {
                 for(control_type** ctl_it = m_controls.begin();ctl_it!=m_controls.end();++ctl_it) {
                     control_type* pctl = *ctl_it;
                     // if it intersects this subrect:
-                    if(pctl->bounds().intersects(subrect)) {
+                    if(pctl->visible() &&
+                        pctl->bounds().intersects(subrect)) {
                         // create our rectangles for the control surface
                         // and the clipping rectangle
                         srect16 surface_rect = pctl->bounds();
@@ -280,6 +281,9 @@ namespace uix {
         }
         bool rendering() const {
             return m_it_dirties!=nullptr;
+        }
+        bool flushing() const {
+            return m_flushing!=0;
         }
         const palette_type* palette() const {
             return m_palette;
