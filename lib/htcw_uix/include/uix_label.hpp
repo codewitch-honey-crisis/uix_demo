@@ -122,7 +122,7 @@ namespace uix {
             m_text_color = value;
             this->invalidate();
         }
-        virtual void on_render(control_surface_type& destination,const srect16& clip) override {
+        virtual void on_paint(control_surface_type& destination,const srect16& clip) override {
             srect16 text_rect;
             int16_t offset_x,offset_y;
             gfx::rgba_pixel<32> background_color,border_color,text_color;
@@ -224,7 +224,7 @@ namespace uix {
             } else {
                 gfx::draw::rounded_rectangle(destination,b,m_round_ratio,border_color,&clip);
             }
-            base_type::on_render(destination,clip);
+            base_type::on_paint(destination,clip);
         }
     };
 }

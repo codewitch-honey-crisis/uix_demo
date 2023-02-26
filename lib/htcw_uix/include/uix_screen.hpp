@@ -128,7 +128,7 @@ namespace uix {
                         surface_rect.offset_inplace(-subrect.x1,-subrect.y1);
                         surface_clip.offset_inplace(-pctl->bounds().x1,-pctl->bounds().y1);
                         control_surface_type surface(bmp,surface_rect);
-                        pctl->on_render(surface,surface_clip);
+                        pctl->on_paint(surface,surface_clip);
                     }
                 }
                 ++m_flushing;

@@ -156,7 +156,7 @@ namespace uix {
             }
             m_bounds = value;
         }
-        virtual void on_render(control_surface_type& destination,const srect16& clip) {
+        virtual void on_paint(control_surface_type& destination,const srect16& clip) {
         }
         virtual void on_touch(size_t locations_size,const spoint16* locations) {
         };

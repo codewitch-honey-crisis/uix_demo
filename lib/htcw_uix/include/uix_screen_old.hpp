@@ -201,7 +201,7 @@ namespace uix {
                             // establish the bitmap backed control surface at the proper logical coordinates
                             control_surface_type surface(bmp,r_offset);
                             // render the control
-                            pcit->on_render(surface);
+                            pcit->on_paint(surface);
                         }
                     }
                     Serial.printf("render at (%d,%d)\n",(int)sr.x1,(int)sr.y1);
